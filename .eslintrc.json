@@ -1,0 +1,8 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "max-lines-per-function": ["error", { "max": 40 }],
+    "no-magic-numbers": "error",
+    "no-magic-strings": "error"
+  }
+}
