@@ -1,14 +1,14 @@
-const { merge } = require("webpack-merge");
-const paths = require("./paths");
-const config = require("./webpack.common");
+const { merge } = require('webpack-merge');
+const paths = require('./paths');
+const config = require('./webpack.common');
 
 module.exports = merge(config, {
-  mode: "development",
-  devtool: "eval-source-map",
+  mode: 'development',
+  devtool: 'eval-source-map',
   output: {
-    filename: "[name].js",
+    filename: '[name].js',
     path: paths.output,
-    publicPath: "/",
+    publicPath: '/',
   },
   devServer: {
     port: 3002,

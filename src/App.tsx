@@ -1,19 +1,17 @@
-import React from "react";
-import { Routes, Route, HashRouter } from "react-router-dom";
-import Home from "./pages/home";
-import NotFound from "./pages/not-found";
+import React from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home/index.tsx';
+import NotFound from './pages/not-found/index.tsx';
 
-const App = () => {
+function App() {
   return (
-    <>
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-        </Routes>
-      </HashRouter>
-    </>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </HashRouter>
   );
-};
+}
 
 export default App;

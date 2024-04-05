@@ -1,11 +1,11 @@
-const { merge } = require("webpack-merge");
-const paths = require("./paths");
-const config = require("./webpack.common");
-const TerserPlugin = require("terser-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { merge } = require('webpack-merge');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const paths = require('./paths');
+const config = require('./webpack.common');
 
 const MINIMIZER = [
-  "...",
+  '...',
   new TerserPlugin({
     parallel: true,
     terserOptions: {
@@ -21,7 +21,7 @@ const MINIMIZER = [
   new CssMinimizerPlugin({
     minimizerOptions: {
       preset: [
-        "default",
+        'default',
         {
           discardComments: { removeAll: true },
         },
@@ -31,11 +31,11 @@ const MINIMIZER = [
 ];
 
 module.exports = merge(config, {
-  mode: "production",
+  mode: 'production',
   output: {
-    filename: "[name].js",
+    filename: '[name].js',
     path: paths.output,
-    publicPath: "/",
+    publicPath: '/',
   },
   optimization: {
     minimize: true,

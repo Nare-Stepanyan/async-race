@@ -1,11 +1,30 @@
+// {
+//   "compilerOptions": {
+//     "target": "es6",
+//     "jsx": "react",
+//     "strict": true,
+//     "noImplicitAny": true,
+//     "esModuleInterop": true,
+//     "moduleResolution": "node"
+//   },
+//   "include": ["./src/**/*"]
+// }
+
 {
   "compilerOptions": {
     "target": "es6",
     "jsx": "react",
+    "module": "commonjs",
     "strict": true,
-    "noImplicitAny": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*", "*/index.tsx"]
+    }
   },
-  "include": ["./src/**/*"]
+  "include": ["src/**/*"]
 }
