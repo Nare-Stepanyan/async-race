@@ -4,7 +4,7 @@ const env = process.env.NODE_ENV || 'LOCAL';
 
 const envFiles = {
   LOCAL: '.env.local',
-  PROD: 'env.prod',
+  PROD: '.env.prod',
 };
 
 module.exports = {

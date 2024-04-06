@@ -33,7 +33,7 @@ const PLUGINS = [
     filename: 'index.html',
   }),
   new webpack.DefinePlugin({
-    'process.env': JSON.stringify(dotenv.parsed),
+    'process.env': JSON.stringify(process.env),
   }),
 ];
 
