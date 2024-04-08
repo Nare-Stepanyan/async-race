@@ -54,7 +54,7 @@ export const updateCar = createAsyncThunk(
 
 export const deleteCarById = createAsyncThunk(
   'car/deleteCarById',
-  async (id: string, { rejectWithValue }) => {
+  async (id: number, { rejectWithValue }) => {
     try {
       await axios.delete(`${baseURL}/${id}`);
       return id;
