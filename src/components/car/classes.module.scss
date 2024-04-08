@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px;
+  outline: 3px solid darkgoldenrod;
+  background-color: rgb(47, 53, 53);
+  box-sizing: border-box;
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-right: 4px solid green;
+    .buttonGroups {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px;
+      .btn {
+        padding: 5px;
+        cursor: pointer;
+        font-size: 24px;
+      }
+    }
+  }
+  .garage {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    .car {
+      font-size: 60px;
+      padding: 5px 10px;
+      margin: 5px;
+      border-right: 3px solid darkgoldenrod;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .model {
+      font-size: 24px;
+      margin: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: #add8e6;
+    }
+  }
+  .finish {
+    border-left: 5px solid green;
+    height: 80px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+  }
+}

@@ -8,14 +8,14 @@ import NotFound from './pages/not-found/index.tsx';
 function App() {
   return (
     <Router>
-      <>
+      <div className="container">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/winners" element={<Winners />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </>
+      </div>
     </Router>
   );
 }
