@@ -20,24 +20,24 @@ function SingleCar({ carItem }: CarProps) {
       <div className={styles.buttons}>
         <div className={styles.buttonGroups}>
           <FaEdit
-            onClick={() => onEdit(carItem.id)}
+            onClick={() => onEdit(carItem.id!)}
             color="#3498db"
             className={styles.btn}
           />
           <FaTrash
-            onClick={() => onDelete(carItem.id)}
+            onClick={() => onDelete(carItem.id!)}
             color="#e74c3c"
             className={styles.btn}
           />
         </div>
         <div className={styles.buttonGroups}>
           <FaFlagCheckered
-            onClick={() => onStartEngine(carItem.id)}
+            onClick={() => onStartEngine(carItem.id!)}
             color="#2ecc71"
             className={styles.btn}
           />
           <FaParking
-            onClick={() => onStopEngine(carItem.id)}
+            onClick={() => onStopEngine(carItem.id!)}
             color="#95a5a6"
             className={styles.btn}
           />
@@ -47,9 +47,10 @@ function SingleCar({ carItem }: CarProps) {
         <div className={styles.car}>
           <FaCarSide color={carItem.color} />
         </div>
+        <div className={styles.line}>Start</div>
         <div className={styles.model}> {carItem.name}</div>
       </div>
-      <div className={styles.finish}>Finish</div>
+      <div className={styles.line}>Finish</div>
     </div>
   );
 }
