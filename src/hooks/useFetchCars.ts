@@ -1,27 +1,26 @@
-import { useEffect, useState } from 'react';
-import { getCars } from '../store/cars/actions.ts';
-import { setCars } from '../store/cars/car-slice.ts';
-import useAppDispatch from './useAppDispatch.ts';
+import { useEffect } from 'react';
 import { Car } from '../type/index.ts';
+
+import { getCars } from '../store/cars/actions.ts';
+import useAppSelector from './useAppSelector.ts';
+import carsSelector from '../store/cars/car-selector.ts';
+import useAppDispatch from './useAppDispatch.ts';
 
 const useFetchCars = (): Car[] => {
   const dispatch = useAppDispatch();
-
-  const [carList, setCarList] = useState<Car[]>([]);
+  const carList = useAppSelector(carsSelector);
 
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const cars = await dispatch(getCars());
-        dispatch(setCars(cars.payload));
-        setCarList(cars.payload);
+        await dispatch(getCars());
       } catch (error) {
         // eslint-disable-next-line no-empty
       }
     };
 
     fetchCars();
-  }, [dispatch]);
+  }, [dispatch, carList]);
 
   return carList;
 };

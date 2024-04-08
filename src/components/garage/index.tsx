@@ -5,6 +5,7 @@ import GenerateCars from '../generate-cars/index.tsx';
 
 function Garage() {
   const cars = useFetchCars();
+
   return (
     <div>
       <div>
