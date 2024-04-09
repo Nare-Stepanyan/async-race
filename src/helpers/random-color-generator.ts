@@ -1,11 +1,16 @@
-import { MAX_COLOR_COMPONENT } from '../constants/index.ts';
+import {
+  HEX_COLOR_LENGTH,
+  INCREMENT,
+  MAX_COLOR_COMPONENT,
+  ZERO,
+} from '../constants/index.ts';
 
 export default function colorGenerator(): string {
-  const red = Math.floor(Math.random() * MAX_COLOR_COMPONENT);
-  const green = Math.floor(Math.random() * MAX_COLOR_COMPONENT);
-  const blue = Math.floor(Math.random() * MAX_COLOR_COMPONENT);
+  const hexChars = '0123456789ABCDEF';
+  let hexColor = '#';
 
-  const color = `rgb(${red}, ${green}, ${blue})`;
-
-  return color;
+  for (let i = ZERO; i < HEX_COLOR_LENGTH; i += INCREMENT) {
+    hexColor += hexChars[Math.floor(Math.random() * MAX_COLOR_COMPONENT)];
+  }
+  return hexColor;
 }

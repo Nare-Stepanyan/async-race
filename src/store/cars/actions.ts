@@ -23,7 +23,7 @@ export const createCar = createAsyncThunk(
       const { data } = await axios.post(baseURL, newCar);
       return data;
     } catch (error) {
-      return rejectWithValue('Error creating product');
+      return rejectWithValue('Error creating car');
     }
   },
 );

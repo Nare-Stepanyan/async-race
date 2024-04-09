@@ -7,20 +7,22 @@ import {
   FaCarSide,
 } from 'react-icons/fa';
 import { Car } from '../../type/index.ts';
-import { onEdit, onDelete, onStartEngine, onStopEngine } from './carLogic.ts';
+import { onDelete, onStartEngine, onStopEngine } from './carLogic.ts';
 import styles from './classes.module.scss';
 
 interface CarProps {
   carItem: Car;
+  // eslint-disable-next-line no-unused-vars
+  setCarToUpdate: (item: Car) => void;
 }
 
-function SingleCar({ carItem }: CarProps) {
+function SingleCar({ carItem, setCarToUpdate }: CarProps) {
   return (
     <div className={styles.container}>
       <div className={styles.buttons}>
         <div className={styles.buttonGroups}>
           <FaEdit
-            onClick={() => onEdit(carItem.id!)}
+            onClick={() => setCarToUpdate(carItem)}
             color="#3498db"
             className={styles.btn}
           />

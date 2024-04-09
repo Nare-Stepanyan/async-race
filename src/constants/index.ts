@@ -9,7 +9,8 @@ export const HUNDRED = 2;
 export const CAR_PER_PAGE = 7;
 export const WINNER_PER_PAGE = 10;
 
-export const MAX_COLOR_COMPONENT = 256;
+export const HEX_COLOR_LENGTH = 6;
+export const MAX_COLOR_COMPONENT = 16;
 
 export const CAR_NAMES: string[] = [
   'Toyota',
