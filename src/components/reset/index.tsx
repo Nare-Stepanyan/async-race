@@ -8,9 +8,11 @@ function Reset() {
   };
 
   return (
-    <button type="button" onClick={handleReset} className={styles.reset}>
-      Reset <FaRegArrowAltCircleLeft className={styles.icon} />
-    </button>
+    <div>
+      <button type="button" onClick={handleReset} className={styles.reset}>
+        Reset <FaRegArrowAltCircleLeft className={styles.icon} />
+      </button>
+    </div>
   );
 }
 

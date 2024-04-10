@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import useFetchCars from '../../hooks/useFetchCars.ts';
 import SingleCar from '../car/index.tsx';
 import GenerateCars from '../generate-cars/index.tsx';

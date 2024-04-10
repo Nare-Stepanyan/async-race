@@ -21,7 +21,7 @@ function UpdateCar({ car }: UpdateCarProps) {
     setUpdatedCar({ name: '', color: '#000000' });
   };
   return (
-    <>
+    <div className="d-flex">
       <input
         type="text"
         placeholder="type car brand"
@@ -34,6 +34,7 @@ function UpdateCar({ car }: UpdateCarProps) {
         value={updatedCar?.color}
         onChange={handleChange}
         name="color"
+        className={styles.colorPicker}
       />
       <Button
         label="Update"
@@ -41,7 +42,7 @@ function UpdateCar({ car }: UpdateCarProps) {
         disabled={!updatedCar?.name || !updatedCar?.color}
         className={`${styles.btn} ${(!updatedCar?.name || !updatedCar?.color) && styles.disabled}`}
       />
-    </>
+    </div>
   );
 }
 

@@ -19,7 +19,7 @@ function CreateNewCar() {
   };
 
   return (
-    <>
+    <div className="d-flex">
       <input
         type="text"
         placeholder="type car brand"
@@ -32,6 +32,7 @@ function CreateNewCar() {
         value={newCar.color}
         onChange={handleInputValues}
         name="color"
+        className={styles.colorPicker}
       />
       <Button
         label="Create"
@@ -39,7 +40,7 @@ function CreateNewCar() {
         disabled={!newCar.name || !newCar.color}
         className={`${styles.btn} ${(!newCar.name || !newCar.color) && styles.disabled}`}
       />
-    </>
+    </div>
   );
 }
 

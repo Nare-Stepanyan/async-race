@@ -8,9 +8,11 @@ function Race() {
   };
 
   return (
-    <button type="button" onClick={startRace} className={styles.race}>
-      Race <FaPlay className={styles.icon} />
-    </button>
+    <div>
+      <button type="button" onClick={startRace} className={styles.race}>
+        Race <FaPlay className={styles.icon} />
+      </button>
+    </div>
   );
 }
 
