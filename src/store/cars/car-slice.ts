@@ -59,7 +59,7 @@ const carSlice = createSlice({
       const deletedCarId = action.payload;
       return {
         ...state,
-        cars: state.cars.filter((car) => car.id.toString() !== deletedCarId),
+        cars: state.cars.filter((car) => car.id !== deletedCarId),
       };
     });
   },

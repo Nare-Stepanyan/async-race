@@ -15,13 +15,16 @@ function Garage() {
     name: '',
     color: `#000000`,
   });
+  const handleCarEdit = (car: Car) => {
+    setCarToUpdate(car);
+  };
   return (
     <div>
       <div className={styles.top}>
         <Race />
         <Reset />
         <CreateNewCar />
-        <UpdateCar car={carToUpdate} />
+        <UpdateCar car={carToUpdate} setCarToUpdate={setCarToUpdate} />
         <GenerateCars />
       </div>
       <div>
@@ -29,7 +32,7 @@ function Garage() {
           <SingleCar
             carItem={car}
             key={car.id}
-            setCarToUpdate={setCarToUpdate}
+            setCarToUpdate={handleCarEdit}
           />
         ))}
       </div>

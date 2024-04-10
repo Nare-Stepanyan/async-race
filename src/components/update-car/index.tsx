@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '../button/index.tsx';
 import { Car } from '../../type/index.ts';
 import styles from './update.module.scss';
@@ -6,32 +6,32 @@ import { onEdit } from '../car/carLogic.ts';
 
 type UpdateCarProps = {
   car: Car;
+  // eslint-disable-next-line no-unused-vars
+  setCarToUpdate: (car: Car) => void;
 };
 
-function UpdateCar({ car }: UpdateCarProps) {
-  const [updatedCar, setUpdatedCar] = useState<Car>({ ...car });
-
+function UpdateCar({ car, setCarToUpdate }: UpdateCarProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setUpdatedCar({ ...updatedCar, [name]: value });
+    setCarToUpdate({ ...car, [name]: value });
   };
   const handleUpdate = () => {
-    if (!updatedCar.name || !updatedCar.color) return;
-    onEdit(updatedCar);
-    setUpdatedCar({ name: '', color: '#000000' });
+    if (!car.name || !car.color) return;
+    onEdit(car);
+    setCarToUpdate({ ...car, name: '', color: '#000000' });
   };
   return (
     <div className="d-flex">
       <input
         type="text"
         placeholder="type car brand"
-        value={updatedCar?.name}
+        value={car.name || ''}
         onChange={handleChange}
         name="name"
       />
       <input
         type="color"
-        value={updatedCar?.color}
+        value={car.color || '#000000'}
         onChange={handleChange}
         name="color"
         className={styles.colorPicker}
@@ -39,8 +39,8 @@ function UpdateCar({ car }: UpdateCarProps) {
       <Button
         label="Update"
         onClick={handleUpdate}
-        disabled={!updatedCar?.name || !updatedCar?.color}
-        className={`${styles.btn} ${(!updatedCar?.name || !updatedCar?.color) && styles.disabled}`}
+        disabled={!car?.name || !car?.color}
+        className={`${styles.btn} ${(!car?.name || !car?.color) && styles.disabled}`}
       />
     </div>
   );
