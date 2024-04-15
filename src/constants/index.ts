@@ -4,7 +4,7 @@ export const NOT_FOUND = 404;
 export const INCREMENT = 1;
 export const DECREMENT = -1;
 export const ZERO = 0;
-export const HUNDRED = 2;
+export const HUNDRED = 100;
 
 export const CAR_PER_PAGE = 7;
 export const WINNER_PER_PAGE = 10;
